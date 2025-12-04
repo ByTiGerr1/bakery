@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { CakeSlice, Clock3, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import { CartPanel } from "./components/cart-panel";
@@ -14,8 +15,15 @@ export default function Home() {
       <section
         id="inicio"
         className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-white"
-        style={{ backgroundImage: `url(${heroImageUrl})` }}
       >
+        <Image
+          alt="Pastel casero decorado de Encina's Bakery"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+          fill
+          priority
+          sizes="100vw"
+          src={heroImageUrl}
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-rose-950/75 via-amber-950/60 to-black/70" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.06),transparent_35%)]" />
 
