@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Encina's Bakery | Tortas y postres artesanales",
+  title: "Encina's Bakery | Tortas y postres artesanales comentario",
   description:
     "Catálogo dulce y ligero para coordinar pedidos de Encina's Bakery. Pasteles hechos en casa con un toque acogedor y artesanal.",
 };
