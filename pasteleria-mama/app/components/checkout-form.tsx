@@ -66,7 +66,7 @@ export function CheckoutForm() {
       onSubmit={handleSubmit}
       className="rounded-3xl border border-white/30 bg-white/70 p-6 shadow-lg shadow-rose-100/40 backdrop-blur"
     >
-      <div className="flex items-center gap-3 pb-4">
+      <div className="flex flex-wrap items-center gap-3 pb-4 sm:flex-nowrap">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
           <Mail className="h-5 w-5" />
         </div>
@@ -116,11 +116,11 @@ export function CheckoutForm() {
 
       <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700 ring-1 ring-slate-100">
         <p className="font-semibold text-slate-900">Resumen breve</p>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2 text-sm">
           <span>Artículos</span>
           <span className="font-semibold">{items.length}</span>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2 text-sm">
           <span>Total estimado</span>
           <span className="font-semibold text-rose-700">
             ${total.toFixed(2)}

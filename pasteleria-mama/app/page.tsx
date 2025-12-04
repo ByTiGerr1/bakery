@@ -13,14 +13,14 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-white">
       <section
         id="inicio"
-        className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-white"
+        className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-white"
         style={{ backgroundImage: `url(${heroImageUrl})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-rose-950/75 via-amber-950/60 to-black/70" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.06),transparent_35%)]" />
 
         <header className="absolute left-0 right-0 top-0 z-20">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 text-xs font-semibold uppercase tracking-[0.18em] sm:text-sm">
+          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-6 text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-sm md:px-6 lg:px-8">
             <nav className="hidden items-center gap-5 md:flex">
               <a className="transition hover:text-amber-100" href="#inicio">
                 Inicio
@@ -63,17 +63,17 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="relative z-10 flex flex-col items-center px-4 text-center">
-          <h1 className="text-4xl font-black uppercase tracking-[0.22em] sm:text-5xl md:text-6xl lg:text-7xl">
+        <div className="relative z-10 flex flex-col items-center px-4 pb-20 pt-28 text-center sm:px-6 lg:px-8">
+          <h1 className="max-w-4xl text-balance text-3xl font-black uppercase leading-tight tracking-[0.18em] sm:text-4xl md:text-5xl lg:text-6xl">
             Sabor real. Hecho en casa.
           </h1>
-          <p className="mt-6 max-w-2xl text-base font-medium uppercase tracking-[0.24em] text-white/85 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-balance text-base font-medium uppercase tracking-[0.16em] text-white/85 sm:text-lg">
             Chocolate oscuro, técnicas de taller y la calidez de nuestra cocina
             en cada rebanada.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 w-full max-w-lg">
             <a
-              className="inline-flex items-center justify-center bg-rose-500 px-8 py-3 text-sm font-black uppercase tracking-[0.28em] text-white shadow-xl transition hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex w-full items-center justify-center rounded-full bg-rose-500 px-8 py-3 text-sm font-black uppercase tracking-[0.22em] text-white shadow-xl transition hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
               href="#productos"
             >
               Comprar ahora
@@ -82,8 +82,8 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-16 sm:px-6 lg:px-8">
-        <section className="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-r from-amber-200 via-rose-200 to-pink-100 p-8 shadow-2xl shadow-rose-100/70">
+      <main className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 pb-16 pt-16 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-r from-amber-200 via-rose-200 to-pink-100 p-6 shadow-2xl shadow-rose-100/70 sm:p-8">
           <div className="absolute -right-10 -top-12 h-56 w-56 rounded-full bg-white/40 blur-3xl" />
           <div className="absolute bottom-4 left-6 h-24 w-24 rounded-full bg-white/40 blur-2xl" />
           <div className="grid gap-8 lg:grid-cols-[1.6fr,1fr] lg:items-center">
@@ -91,10 +91,10 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-rose-700 shadow-sm shadow-rose-100">
                 <Sparkles className="h-4 w-4" /> Catálogo dulce y cercano
               </div>
-              <h2 className="text-4xl font-semibold leading-tight sm:text-5xl">
+              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
                 Encina&apos;s Bakery
               </h2>
-              <p className="max-w-2xl text-lg text-rose-800/80">
+              <p className="max-w-2xl text-base text-rose-800/80 sm:text-lg">
                 Pasteles, tartas y bocados hechos con recetas de casa, listos
                 para coordinar entrega sin fricciones. Agrega tus favoritos y te
                 confirmamos el pedido por correo.
@@ -160,7 +160,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="productos" className="grid gap-8 lg:grid-cols-[1.6fr,1fr]">
+        <section
+          id="productos"
+          className="grid gap-10 lg:grid-cols-[1.6fr,1fr]"
+        >
           <div className="space-y-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -192,17 +195,17 @@ export default function Home() {
 
         <section
           id="nosotros"
-          className="overflow-hidden rounded-3xl border border-rose-100 bg-white/80 p-8 shadow-lg shadow-rose-100/60"
+          className="overflow-hidden rounded-3xl border border-rose-100 bg-white/80 p-6 shadow-lg shadow-rose-100/60 sm:p-8"
         >
-          <div className="grid gap-8 md:grid-cols-[1.2fr,1fr] md:items-center">
+          <div className="grid gap-8 md:grid-cols-[1.1fr,1fr] md:items-center">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-wide text-rose-500">
                 Nosotros
               </p>
-              <h3 className="text-3xl font-semibold text-slate-900">
+              <h3 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 Una cocina pequeña con sabor enorme
               </h3>
-              <p className="text-base text-slate-600">
+              <p className="text-base text-slate-600 sm:text-lg">
                 Encina&apos;s Bakery nace de la mesa familiar. Cada pastel se
                 arma a mano con ingredientes frescos, fruta real y decoraciones
                 delicadas. Nos importa que cada entrega llegue con la misma
