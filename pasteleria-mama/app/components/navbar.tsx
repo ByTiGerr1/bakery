@@ -40,8 +40,8 @@ export function Navbar() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       } ${
         isScrolled
-          ? "bg-white/80 text-rose-950 shadow-sm backdrop-blur-md"
-          : "border border-white/40 bg-transparent text-white"
+          ? "border border-rose-100/60 bg-white/80 text-rose-950 shadow-sm backdrop-blur-md"
+          : "border-transparent bg-transparent text-white"
       }`}
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-6 text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-sm md:px-6 lg:px-8">
