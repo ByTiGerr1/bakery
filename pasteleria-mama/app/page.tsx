@@ -6,57 +6,84 @@ import { ProductCard } from "./components/product-card";
 import { products } from "./lib/products";
 
 export default function Home() {
+  const heroImageUrl =
+    "https://res.cloudinary.com/dzue1np85/image/upload/v1764863080/IMG_1985_dhtnzs.jpg";
+
   return (
-    <div className="min-h-screen">
-      <header className="sticky top-0 z-40 border-b border-amber-100/70 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-amber-200 via-rose-200 to-pink-200 text-rose-800 shadow-md">
-              <CakeSlice className="h-5 w-5" />
+    <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-white">
+      <section
+        id="inicio"
+        className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-white"
+        style={{ backgroundImage: `url(${heroImageUrl})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-rose-950/75 via-amber-950/60 to-black/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.06),transparent_35%)]" />
+
+        <header className="absolute left-0 right-0 top-0 z-20">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 text-xs font-semibold uppercase tracking-[0.18em] sm:text-sm">
+            <nav className="hidden items-center gap-5 md:flex">
+              <a className="transition hover:text-amber-100" href="#inicio">
+                Inicio
+              </a>
+              <a className="transition hover:text-amber-100" href="#productos">
+                Productos
+              </a>
+            </nav>
+            <div className="flex flex-1 justify-center">
+              <div className="flex items-center gap-3 text-center text-white">
+                <div className="flex h-12 w-12 items-center justify-center border border-white/40 bg-gradient-to-br from-rose-100/30 to-amber-100/30 text-white shadow-lg backdrop-blur-sm">
+                  <CakeSlice className="h-6 w-6" />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/80 sm:text-xs">
+                    Encina&apos;s Bakery
+                  </p>
+                  <p className="text-sm font-black leading-tight sm:text-base">
+                    Sabor real
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-rose-900">
-                Encina&apos;s Bakery
-              </p>
-              <p className="text-sm text-rose-500">
-                Pastelería artesanal y acogedora
-              </p>
+            <nav className="hidden items-center justify-end gap-5 md:flex">
+              <a className="transition hover:text-amber-100" href="#nosotros">
+                Nosotros
+              </a>
+              <a className="transition hover:text-amber-100" href="#productos">
+                Pedidos
+              </a>
+            </nav>
+            <div className="flex flex-1 justify-end md:hidden">
+              <a
+                className="rounded-none border border-white/40 px-4 py-2 text-xs font-bold transition hover:bg-white/10"
+                href="#productos"
+              >
+                Ver catálogo
+              </a>
             </div>
           </div>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-rose-700 sm:flex">
-            <a
-              className="rounded-full px-3 py-2 transition hover:bg-rose-50 hover:text-rose-900"
-              href="#inicio"
-            >
-              Inicio
-            </a>
-            <a
-              className="rounded-full px-3 py-2 transition hover:bg-rose-50 hover:text-rose-900"
-              href="#productos"
-            >
-              Productos
-            </a>
-            <a
-              className="rounded-full px-3 py-2 transition hover:bg-rose-50 hover:text-rose-900"
-              href="#nosotros"
-            >
-              Nosotros
-            </a>
-            <a
-              className="inline-flex items-center gap-2 rounded-full bg-rose-500 px-4 py-2 text-white shadow-sm transition hover:bg-rose-600"
-              href="#productos"
-            >
-              <Sparkles className="h-4 w-4" /> Ver catálogo
-            </a>
-          </nav>
-        </div>
-      </header>
+        </header>
 
-      <main className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-10 sm:px-6 lg:px-8">
-        <section
-          id="inicio"
-          className="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-r from-amber-200 via-rose-200 to-pink-100 p-8 shadow-2xl shadow-rose-100/70"
-        >
+        <div className="relative z-10 flex flex-col items-center px-4 text-center">
+          <h1 className="text-4xl font-black uppercase tracking-[0.22em] sm:text-5xl md:text-6xl lg:text-7xl">
+            Sabor real. Hecho en casa.
+          </h1>
+          <p className="mt-6 max-w-2xl text-base font-medium uppercase tracking-[0.24em] text-white/85 sm:text-lg">
+            Chocolate oscuro, técnicas de taller y la calidez de nuestra cocina
+            en cada rebanada.
+          </p>
+          <div className="mt-10">
+            <a
+              className="inline-flex items-center justify-center bg-rose-500 px-8 py-3 text-sm font-black uppercase tracking-[0.28em] text-white shadow-xl transition hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              href="#productos"
+            >
+              Comprar ahora
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-16 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-r from-amber-200 via-rose-200 to-pink-100 p-8 shadow-2xl shadow-rose-100/70">
           <div className="absolute -right-10 -top-12 h-56 w-56 rounded-full bg-white/40 blur-3xl" />
           <div className="absolute bottom-4 left-6 h-24 w-24 rounded-full bg-white/40 blur-2xl" />
           <div className="grid gap-8 lg:grid-cols-[1.6fr,1fr] lg:items-center">
@@ -64,9 +91,9 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-rose-700 shadow-sm shadow-rose-100">
                 <Sparkles className="h-4 w-4" /> Catálogo dulce y cercano
               </div>
-              <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+              <h2 className="text-4xl font-semibold leading-tight sm:text-5xl">
                 Encina&apos;s Bakery
-              </h1>
+              </h2>
               <p className="max-w-2xl text-lg text-rose-800/80">
                 Pasteles, tartas y bocados hechos con recetas de casa, listos
                 para coordinar entrega sin fricciones. Agrega tus favoritos y te
