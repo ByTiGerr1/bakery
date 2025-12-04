@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { CakeSlice, Clock3, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import { CartPanel } from "./components/cart-panel";
 import { CheckoutForm } from "./components/checkout-form";
+import { Navbar } from "./components/navbar";
 import { ProductCard } from "./components/product-card";
 import { products } from "./lib/products";
 
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-white">
+      <Navbar />
       <section
         id="inicio"
         className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-white"
@@ -26,50 +28,6 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-rose-950/75 via-amber-950/60 to-black/70" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.06),transparent_35%)]" />
-
-        <header className="absolute left-0 right-0 top-0 z-20">
-          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-6 text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-sm md:px-6 lg:px-8">
-            <nav className="hidden items-center gap-5 md:flex">
-              <a className="transition hover:text-amber-100" href="#inicio">
-                Inicio
-              </a>
-              <a className="transition hover:text-amber-100" href="#productos">
-                Productos
-              </a>
-            </nav>
-            <div className="flex flex-1 justify-center">
-              <div className="flex items-center gap-3 text-center text-white">
-                <div className="flex h-12 w-12 items-center justify-center border border-white/40 bg-gradient-to-br from-rose-100/30 to-amber-100/30 text-white shadow-lg backdrop-blur-sm">
-                  <CakeSlice className="h-6 w-6" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/80 sm:text-xs">
-                    Encina&apos;s Bakery
-                  </p>
-                  <p className="text-sm font-black leading-tight sm:text-base">
-                    Sabor real
-                  </p>
-                </div>
-              </div>
-            </div>
-            <nav className="hidden items-center justify-end gap-5 md:flex">
-              <a className="transition hover:text-amber-100" href="#nosotros">
-                Nosotros
-              </a>
-              <a className="transition hover:text-amber-100" href="#productos">
-                Pedidos
-              </a>
-            </nav>
-            <div className="flex flex-1 justify-end md:hidden">
-              <a
-                className="rounded-none border border-white/40 px-4 py-2 text-xs font-bold transition hover:bg-white/10"
-                href="#productos"
-              >
-                Ver catálogo
-              </a>
-            </div>
-          </div>
-        </header>
 
         <div className="relative z-10 flex flex-col items-center px-4 pb-20 pt-28 text-center sm:px-6 lg:px-8">
           <h1 className="max-w-4xl text-balance text-3xl font-black uppercase leading-tight tracking-[0.18em] sm:text-4xl md:text-5xl lg:text-6xl">
