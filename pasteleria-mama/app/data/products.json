@@ -1,0 +1,57 @@
+[
+  {
+    "id": "torta-frutos-rojos",
+    "name": "Torta de frutos rojos",
+    "description": "Bizcochuelo de vainilla relleno de crema diplomática y frutos rojos frescos.",
+    "price": 38,
+    "servings": "10 porciones",
+    "tags": ["Fresco", "Temporada"],
+    "featured": true,
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/red-berry-cake.jpg"
+  },
+  {
+    "id": "torta-dulce-de-leche",
+    "name": "Torta clásica de dulce de leche",
+    "description": "Capas húmedas de chocolate, dulce de leche casero y baño de cacao.",
+    "price": 34,
+    "servings": "12 porciones",
+    "tags": ["Favorita", "Chocolate"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/dulce-de-leche-cake.jpg"
+  },
+  {
+    "id": "torta-merengue-limon",
+    "name": "Pie de merengue y limón",
+    "description": "Base crocante, crema de limón intensa y merengue tostado al final.",
+    "price": 28,
+    "servings": "8 porciones",
+    "tags": ["Cítricos", "Ligero"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/lemon-meringue.jpg"
+  },
+  {
+    "id": "torta-oreo",
+    "name": "Torta Oreo con crema de vainilla",
+    "description": "Galletas crocantes, crema suave y topping de chocolate blanco.",
+    "price": 31,
+    "servings": "10 porciones",
+    "tags": ["Cremosa", "Para niñxs"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820002/bakery/oreo-cake.jpg"
+  },
+  {
+    "id": "cupcakes-vainilla",
+    "name": "Cupcakes de vainilla con buttercream",
+    "description": "Doce unidades decoradas a mano, ideales para cumpleaños y meriendas.",
+    "price": 24,
+    "servings": "12 unidades",
+    "tags": ["Eventos", "Personalizable"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/vanilla-cupcakes.jpg"
+  },
+  {
+    "id": "cheesecake-maracuya",
+    "name": "Cheesecake de maracuyá",
+    "description": "Base de galletas, relleno cremoso y coulis de maracuyá artesanal.",
+    "price": 36,
+    "servings": "10 porciones",
+    "tags": ["Tropical", "Sin horno"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820002/bakery/passionfruit-cheesecake.jpg"
+  }
+]
