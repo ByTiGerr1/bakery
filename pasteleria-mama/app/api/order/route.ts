@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resendKey = process.env.RESEND_API_KEY;
-const notificationEmail = process.env.ORDER_NOTIFICATION_EMAIL;
+// Usamos EMAIL_TO que es el que definiste en tu .env.local y Vercel
+const ownerEmail = process.env.EMAIL_TO;
 
 const resend = resendKey ? new Resend(resendKey) : null;
 
@@ -27,17 +28,11 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!resend) {
+  if (!resend || !ownerEmail) {
     return NextResponse.json(
-      { message: "Configura RESEND_API_KEY para enviar el correo de pedido." },
+      { message: "Error de configuración del servidor (Faltan API Keys)." },
       { status: 500 }
     );
-  }
-
-  const recipientList = [payload.customer.email];
-
-  if (notificationEmail) {
-    recipientList.push(notificationEmail);
   }
 
   const orderLines = payload.items
@@ -50,35 +45,47 @@ export async function POST(request: Request) {
     .join("");
 
   const emailHtml = `
-    <div style="font-family: 'Inter', system-ui, sans-serif; color:#0f172a;">
-      <h2>Nuevo pedido de ${payload.customer.name}</h2>
-      <p>Coordinemos la entrega y forma de pago por correo.</p>
-      <hr />
-      <p><strong>Contacto:</strong> ${payload.customer.email}</p>
-      <p><strong>Notas:</strong> ${
-        payload.customer.notes || "Sin notas adicionales"
-      }</p>
-      <h3>Resumen del pedido</h3>
+    <div style="font-family: 'Inter', system-ui, sans-serif; color:#0f172a; max-width: 600px; margin: 0 auto;">
+      <h1 style="color: #be123c;">🍰 Nuevo Pedido Web</h1>
+      <p><strong>Cliente:</strong> ${payload.customer.name}</p>
+      <p><strong>Email:</strong> <a href="mailto:${payload.customer.email}">${
+    payload.customer.email
+  }</a></p>
+      <p><strong>Notas:</strong> ${payload.customer.notes || "Sin notas"}</p>
+      
+      <hr style="border: 1px solid #e2e8f0; margin: 20px 0;" />
+      
+      <h3>Detalle del pedido:</h3>
       <ul>${orderLines}</ul>
-      <p><strong>Total estimado:</strong> $${
-        payload.total?.toFixed(2) ?? ""
-      }</p>
+      
+      <p style="font-size: 18px;"><strong>Total a Pagar: $${
+        payload.total?.toFixed(2) ?? "0.00"
+      }</strong></p>
+      
+      <hr style="border: 1px solid #e2e8f0; margin: 20px 0;" />
+      <p style="font-size: 14px; color: #64748b;">
+        Este correo fue enviado desde tu página web. Dale a "Responder" para escribirle al cliente.
+      </p>
     </div>
   `;
 
   try {
+    // EN MODO GRATUITO:
+    // 'from' DEBE ser onboarding@resend.dev
+    // 'to' DEBE ser tu propio correo verificado (ownerEmail)
+    // Usamos 'reply_to' para que al responder le escribas al cliente
     await resend.emails.send({
-      from: "Encina's Bakery <pedidos@encinasbakery.dev>",
-      to: recipientList,
+      from: "Pastelería Web <onboarding@resend.dev>",
+      to: [ownerEmail],
       subject: `Nuevo pedido de ${payload.customer.name}`,
       html: emailHtml,
     });
 
-    return NextResponse.json({ message: "Pedido enviado" });
+    return NextResponse.json({ message: "Pedido enviado con éxito" });
   } catch (error) {
-    console.error(error);
+    console.error("Error enviando email:", error);
     return NextResponse.json(
-      { message: "No pudimos enviar el correo, intenta más tarde." },
+      { message: "No pudimos enviar el correo. Revisa los logs del servidor." },
       { status: 500 }
     );
   }
