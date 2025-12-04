@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Torta de Chocolate y Trufa",
+    "description": "Deliciosa torta de chocolate húmeda rellena de ganache de trufa oscura.",
+    "price": 25.00,
+    "image": "/images/chocolate-cake.jpg",
+    "category": "Tortas"
+  },
+  {
+    "id": "2",
+    "name": "Cheesecake de Frutos Rojos",
+    "description": "Clásico cheesecake estilo New York con topping de frutos rojos frescos.",
+    "price": 28.50,
+    "image": "/images/cheesecake.jpg",
+    "category": "Tortas"
+  },
+  {
+    "id": "3",
+    "name": "Box de Cupcakes Variados (6 u.)",
+    "description": "Caja de 6 cupcakes con sabores surtidos: Vainilla, Chocolate y Red Velvet.",
+    "price": 12.00,
+    "image": "/images/cupcakes.jpg",
+    "category": "Cupcakes"
+  },
+  {
+    "id": "4",
+    "name": "Tarta de Limón y Merengue",
+    "description": "Base crujiente con crema de limón ácida y suave merengue italiano.",
+    "price": 22.00,
+    "image": "/images/lemon-pie.jpg",
+    "category": "Tartas"
+  },
+  {
+    "id": "5",
+    "name": "Alfajores de Maicena (12 u.)",
+    "description": "Docena de alfajores de maicena rellenos de abundante dulce de leche.",
+    "price": 10.00,
+    "image": "/images/alfajores.jpg",
+    "category": "Dulces"
+  }
+]
