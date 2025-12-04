@@ -68,7 +68,7 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: "Pedidos Pastelería <pedidos@pasteleria.dev>",
+      from: "Encina's Bakery <pedidos@encinasbakery.dev>",
       to: recipientList,
       subject: `Nuevo pedido de ${payload.customer.name}`,
       html: emailHtml,

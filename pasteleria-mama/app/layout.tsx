@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pastelería Mamá | Tortas y postres artesanales",
+  title: "Encina's Bakery | Tortas y postres artesanales",
   description:
-    "Catálogo ligero de tortas artesanales con pedidos coordinados por correo. Sin pasarela de pago complicada, solo dulzura.",
+    "Catálogo dulce y ligero para coordinar pedidos de Encina's Bakery. Pasteles hechos en casa con un toque acogedor y artesanal.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-b from-rose-50 via-white to-white text-slate-900 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-gradient-to-b from-amber-50 via-rose-50 to-white text-slate-900 antialiased`}
       >
         {children}
       </body>

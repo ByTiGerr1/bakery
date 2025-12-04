@@ -17,13 +17,12 @@
 }
 
 body {
-  background: radial-gradient(circle at 20% 20%, #fff2f6, transparent 35%),
-    radial-gradient(circle at 80% 0%, #e0f2fe, transparent 35%),
-    var(--background);
+  background: radial-gradient(circle at 18% 18%, #ffe6f0, transparent 35%),
+    radial-gradient(circle at 80% 0%, #fff6e0, transparent 32%),
+    radial-gradient(circle at 60% 60%, #f8ecff, transparent 40%), #fffaf5;
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
 }
-
 ::selection {
   background: #fce7f3;
   color: #9f1239;
