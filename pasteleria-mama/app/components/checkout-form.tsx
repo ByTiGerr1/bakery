@@ -77,7 +77,7 @@ export function CheckoutForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-white/30 bg-white/70 p-6 shadow-lg shadow-rose-100/40 backdrop-blur"
+      className="rounded-3xl border border-white/30 bg-white/70 p-4 shadow-lg shadow-rose-100/40 backdrop-blur sm:p-6"
     >
       <div className="flex flex-wrap items-center gap-3 pb-4 sm:flex-nowrap">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
@@ -87,7 +87,7 @@ export function CheckoutForm() {
           <p className="text-sm font-semibold text-emerald-700">
             Finalizar pedido
           </p>
-          <p className="text-lg font-semibold text-slate-900">
+          <p className="text-base font-semibold text-slate-900 sm:text-lg">
             Envía el pedido por correo
           </p>
         </div>
@@ -144,7 +144,7 @@ export function CheckoutForm() {
         />
       </label>
 
-      <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700 ring-1 ring-slate-100">
+      <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 px-3 py-3 text-sm text-slate-700 ring-1 ring-slate-100 sm:px-4">
         <p className="font-semibold text-slate-900">Resumen breve</p>
         <div className="flex items-center justify-between gap-2 text-sm">
           <span>Artículos</span>
