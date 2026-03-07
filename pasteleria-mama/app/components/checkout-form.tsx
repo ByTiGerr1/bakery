@@ -77,23 +77,29 @@ export function CheckoutForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-white/30 bg-white/70 p-4 shadow-lg shadow-rose-100/40 backdrop-blur sm:p-6"
+      className="rounded-3xl border border-emerald-100/80 bg-white/90 p-4 shadow-xl shadow-rose-100/20 backdrop-blur sm:p-6"
     >
-      <div className="flex flex-wrap items-center gap-3 pb-4 sm:flex-nowrap">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-          <Mail className="h-5 w-5" />
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-emerald-100/80 pb-5">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+            <Mail className="h-5 w-5" />
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-700">
+              Finalizar pedido
+            </p>
+            <p className="text-base font-semibold text-slate-900 sm:text-lg">
+              Confirmación por correo
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="text-sm font-semibold text-emerald-700">
-            Finalizar pedido
-          </p>
-          <p className="text-base font-semibold text-slate-900 sm:text-lg">
-            Envía el pedido por correo
-          </p>
+
+        <div className="rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
+          Respuesta rápida
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
         <label className="space-y-2 text-sm font-medium text-slate-700">
           Nombre
           <input
@@ -144,27 +150,29 @@ export function CheckoutForm() {
         />
       </label>
 
-      <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 px-3 py-3 text-sm text-slate-700 ring-1 ring-slate-100 sm:px-4">
-        <p className="font-semibold text-slate-900">Resumen breve</p>
-        <div className="flex items-center justify-between gap-2 text-sm">
-          <span>Artículos</span>
-          <span className="font-semibold">{items.length}</span>
+      <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/90 px-4 py-4">
+        <p className="text-sm font-semibold text-slate-900">Resumen breve</p>
+        <div className="mt-3 grid gap-2 text-sm text-slate-700">
+          <div className="flex items-center justify-between gap-2">
+            <span>Productos distintos</span>
+            <span className="font-semibold text-slate-900">{items.length}</span>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <span>Total estimado</span>
+            <span className="text-base font-semibold text-rose-700">${total.toFixed(2)}</span>
+          </div>
         </div>
-        <div className="flex items-center justify-between gap-2 text-sm">
-          <span>Total estimado</span>
-          <span className="font-semibold text-rose-700">
-            ${total.toFixed(2)}
-          </span>
-        </div>
-        <p className="text-xs text-slate-500">
+        <p className="mt-3 text-xs text-slate-500">
           Te responderemos por correo para confirmar pago y entrega.
         </p>
       </div>
 
       {message && (
         <p
-          className={`mt-4 text-sm font-medium ${
-            status === "success" ? "text-emerald-700" : "text-rose-700"
+          className={`mt-4 rounded-xl border px-3 py-2 text-sm font-medium ${
+            status === "success"
+              ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+              : "border-rose-200 bg-rose-50 text-rose-700"
           }`}
         >
           {message}
@@ -174,7 +182,7 @@ export function CheckoutForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-200 transition hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-6 inline-flex w-full min-h-11 items-center justify-center gap-2 rounded-full bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-200 transition hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-70"
       >
         <SendHorizonal className="h-4 w-4" />
         {status === "loading" ? "Enviando pedido..." : "Enviar pedido"}

@@ -40,7 +40,7 @@ export function CartDrawer() {
         type="button"
         aria-label="Abrir carrito"
         onClick={() => setIsOpen(true)}
-        className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-200/80 text-rose-700 transition hover:bg-rose-50"
+        className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-200/80 bg-white/70 text-rose-700 shadow-sm backdrop-blur transition hover:bg-rose-50"
       >
         <ShoppingBag className="h-5 w-5" />
         {totalItems > 0 && (
@@ -58,15 +58,18 @@ export function CartDrawer() {
       />
 
       <aside
-        className={`fixed right-0 top-0 z-[80] flex h-[100svh] w-full max-w-md flex-col border-l border-rose-100 bg-white transition-transform duration-300 ease-in-out ${
+        className={`fixed right-0 top-0 z-[80] flex h-[100svh] w-full max-w-md flex-col border-l border-rose-100 bg-gradient-to-b from-white via-rose-50/30 to-white transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Panel lateral del carrito"
       >
-        <header className="flex items-center justify-between border-b border-rose-100 px-5 py-4">
+        <header className="flex items-center justify-between border-b border-rose-100/80 bg-white/85 px-5 py-4 backdrop-blur">
           <div className="flex items-center gap-2">
             <ShoppingBag className="h-5 w-5 text-rose-700" />
-            <h2 className="text-2xl font-semibold text-rose-800">Tu carrito</h2>
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-rose-500">Pastelería Encina</p>
+              <h2 className="text-xl font-semibold text-rose-800">Tu carrito</h2>
+            </div>
           </div>
           <button
             type="button"
@@ -80,8 +83,9 @@ export function CartDrawer() {
 
         <div className="flex-1 overflow-y-auto px-5 py-5">
           {items.length === 0 ? (
-            <div className="mt-16 space-y-5 text-center">
-              <p className="text-4xl font-semibold text-rose-800">Tu carrito está vacío.</p>
+            <div className="mt-16 space-y-5 rounded-2xl border border-dashed border-rose-200 bg-white/80 p-6 text-center">
+              <p className="text-2xl font-semibold text-rose-800">Tu carrito está vacío.</p>
+              <p className="text-sm text-slate-500">Agrega tortas o postres para empezar tu pedido.</p>
               <Link
                 href="/productos"
                 onClick={() => setIsOpen(false)}
@@ -95,7 +99,7 @@ export function CartDrawer() {
               {items.map((item) => (
                 <article
                   key={item.id}
-                  className="rounded-2xl border border-rose-100 bg-rose-50/40 p-3"
+                  className="rounded-2xl border border-rose-100 bg-white/90 p-3 shadow-sm"
                 >
                   <div className="mb-2 flex items-start justify-between gap-3">
                     <div>
@@ -149,7 +153,7 @@ export function CartDrawer() {
           <Link
             href="/carrito"
             onClick={() => setIsOpen(false)}
-            className="inline-flex w-full min-h-11 items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex w-full min-h-11 items-center justify-center rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-2 text-sm font-semibold text-white transition hover:from-rose-700 hover:to-rose-600"
           >
             Ir a pagar
           </Link>

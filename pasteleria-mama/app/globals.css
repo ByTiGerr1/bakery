@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fffdf8;
   --foreground: #0f172a;
 }
 
@@ -17,12 +17,32 @@
 }
 
 body {
-  background: radial-gradient(circle at 18% 18%, #ffe6f0, transparent 35%),
-    radial-gradient(circle at 80% 0%, #fff6e0, transparent 32%),
-    radial-gradient(circle at 60% 60%, #f8ecff, transparent 40%), #fffaf5;
+  background: radial-gradient(circle at 12% 14%, #ffe3ee, transparent 34%),
+    radial-gradient(circle at 86% 2%, #fff2d9, transparent 32%),
+    radial-gradient(circle at 70% 64%, #f8e7ff, transparent 40%), #fffaf5;
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: radial-gradient(#fbcfe8 0.6px, transparent 0.6px),
+    radial-gradient(#fde68a 0.6px, transparent 0.6px);
+  background-size: 28px 28px, 40px 40px;
+  background-position: 0 0, 14px 10px;
+  opacity: 0.2;
+}
+
+a,
+button {
+  transition-duration: 180ms;
+}
+
 ::selection {
   background: #fce7f3;
   color: #9f1239;

@@ -19,6 +19,24 @@
     "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/dulce-de-leche-cake.jpg"
   },
   {
+    "id": "alfajores-nuez",
+    "name": "Alfajores Premium de Nuez",
+    "description": "Alfajores premium de nuez bañados en chocolate con relleno de dulce de leche.",
+    "price": 22,
+    "servings": "6 unidades",
+    "tags": ["Clásico", "Nuez"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/alfajores-nuez.jpg"
+  },
+  {
+    "id": "cheesecake-maracuya",
+    "name": "Cheesecake de Maracuyá",
+    "description": "Mini cheesecake de maracuyá sobre una base de coco.",
+    "price": 15,
+    "servings": "1 porción",
+    "tags": ["Tropical", "Mini"],
+    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820002/bakery/passionfruit-cheesecake.jpg"
+  },
+  {
     "id": "torta-merengue-limon",
     "name": "Tarta merengada de limón",
     "description": "Base crocante, crema de limón intensa y merengue tostado al final.",
@@ -44,14 +62,5 @@
     "servings": "12 unidades",
     "tags": ["Eventos", "Personalizable"],
     "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820001/bakery/vanilla-cupcakes.jpg"
-  },
-  {
-    "id": "cheesecake-maracuya",
-    "name": "Tarta de queso con maracuyá",
-    "description": "Base de galletas, relleno cremoso y coulis de maracuyá artesanal.",
-    "price": 36,
-    "servings": "10 porciones",
-    "tags": ["Tropical", "Sin horno"],
-    "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820002/bakery/passionfruit-cheesecake.jpg"
   }
 ]
