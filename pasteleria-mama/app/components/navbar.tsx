@@ -80,7 +80,7 @@ export function Navbar() {
                   isScrolled ? "text-rose-400" : "text-white/80"
                 }`}
               >
-                Encina&apos;s Bakery
+                Pastelería Encina
               </p>
               <p className="text-sm font-black leading-tight sm:text-base">
                 Sabor real
@@ -89,14 +89,6 @@ export function Navbar() {
           </div>
         </div>
         <nav className="hidden items-center justify-end gap-5 md:flex">
-          <a
-            className={`transition ${
-              isScrolled ? "hover:text-rose-600" : "hover:text-amber-100"
-            }`}
-            href="#nosotros"
-          >
-            Nosotros
-          </a>
           <a
             className={`transition ${
               isScrolled ? "hover:text-rose-600" : "hover:text-amber-100"

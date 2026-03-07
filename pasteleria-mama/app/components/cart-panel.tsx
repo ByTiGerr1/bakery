@@ -14,7 +14,7 @@ export function CartPanel() {
           <ShoppingBag className="h-5 w-5" />
         </div>
         <div>
-          <p className="text-sm font-semibold text-rose-700">Carrito vivo</p>
+          <p className="text-sm font-semibold text-rose-700">Tu pedido</p>
           <p className="text-lg font-semibold text-slate-900">
             {items.length} productos
           </p>
@@ -78,11 +78,11 @@ export function CartPanel() {
 
       <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-900 px-5 py-4 text-white shadow-inner sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm text-slate-200">Total estimado</p>
+          <p className="text-sm text-slate-200">Total del pedido</p>
           <p className="text-2xl font-semibold">${total.toFixed(2)}</p>
         </div>
         <div className="rounded-full bg-white/15 px-4 py-2 text-center text-sm font-semibold">
-          Entrega coordinada
+          Confirmación por correo
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@
   },
   {
     "id": "torta-merengue-limon",
-    "name": "Pie de merengue y limón",
+    "name": "Tarta merengada de limón",
     "description": "Base crocante, crema de limón intensa y merengue tostado al final.",
     "price": 28,
     "servings": "8 porciones",
@@ -29,16 +29,16 @@
   },
   {
     "id": "torta-oreo",
-    "name": "Torta Oreo con crema de vainilla",
+    "name": "Torta Oreo con crema suave de vainilla",
     "description": "Galletas crocantes, crema suave y topping de chocolate blanco.",
     "price": 31,
     "servings": "10 porciones",
-    "tags": ["Cremosa", "Para niñxs"],
+    "tags": ["Cremosa", "Ideal para peques"],
     "image": "https://res.cloudinary.com/dsx1k5w2f/image/upload/v1736820002/bakery/oreo-cake.jpg"
   },
   {
     "id": "cupcakes-vainilla",
-    "name": "Cupcakes de vainilla con buttercream",
+    "name": "Magdalenas de vainilla con crema",
     "description": "Doce unidades decoradas a mano, ideales para cumpleaños y meriendas.",
     "price": 24,
     "servings": "12 unidades",
@@ -47,7 +47,7 @@
   },
   {
     "id": "cheesecake-maracuya",
-    "name": "Cheesecake de maracuyá",
+    "name": "Tarta de queso con maracuyá",
     "description": "Base de galletas, relleno cremoso y coulis de maracuyá artesanal.",
     "price": 36,
     "servings": "10 porciones",

@@ -10,6 +10,7 @@ export function CheckoutForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "error" | "success"
   >("idle");
@@ -24,6 +25,18 @@ export function CheckoutForm() {
       return;
     }
 
+    if (name.trim().length < 2) {
+      setStatus("error");
+      setMessage("Ingresa un nombre válido para confirmar el pedido.");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      setStatus("error");
+      setMessage("Ingresa un correo válido para continuar.");
+      return;
+    }
+
     setStatus("loading");
     setMessage(null);
 
@@ -32,9 +45,8 @@ export function CheckoutForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          customer: { name, email, notes },
-          items,
-          total,
+          customer: { name, email, notes, website },
+          items: items.map((item) => ({ id: item.id, quantity: item.quantity })),
         }),
       });
 
@@ -54,6 +66,7 @@ export function CheckoutForm() {
       setName("");
       setEmail("");
       setNotes("");
+      setWebsite("");
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -72,7 +85,7 @@ export function CheckoutForm() {
         </div>
         <div>
           <p className="text-sm font-semibold text-emerald-700">
-            Checkout simplificado
+            Finalizar pedido
           </p>
           <p className="text-lg font-semibold text-slate-900">
             Envía el pedido por correo
@@ -85,6 +98,9 @@ export function CheckoutForm() {
           Nombre
           <input
             required
+            minLength={2}
+            maxLength={80}
+            autoComplete="name"
             value={name}
             onChange={(event) => setName(event.target.value)}
             placeholder="¿Para quién preparamos las tortas?"
@@ -96,6 +112,8 @@ export function CheckoutForm() {
           <input
             required
             type="email"
+            maxLength={120}
+            autoComplete="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="Te enviaremos la confirmación"
@@ -108,9 +126,21 @@ export function CheckoutForm() {
         Preferencias o detalles de entrega
         <textarea
           value={notes}
+          maxLength={500}
           onChange={(event) => setNotes(event.target.value)}
           placeholder="Ej: sin nueces, entregar el sábado por la mañana, acompañar con vela de cumpleaños."
           className="min-h-28 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
+        />
+      </label>
+
+      <label className="hidden" aria-hidden="true" tabIndex={-1}>
+        Sitio web
+        <input
+          type="text"
+          value={website}
+          onChange={(event) => setWebsite(event.target.value)}
+          autoComplete="off"
+          tabIndex={-1}
         />
       </label>
 
@@ -127,8 +157,7 @@ export function CheckoutForm() {
           </span>
         </div>
         <p className="text-xs text-slate-500">
-          Coordinamos pago y entrega por correo o WhatsApp para mantener el
-          proceso sencillo.
+          Te responderemos por correo para confirmar pago y entrega.
         </p>
       </div>
 
